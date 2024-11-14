@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  cursor: url("./assets/cursor.svg"), auto;
+}
+
+*::selection {
+  background-color: #231f20;
+  color: #fdf9ec;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fdf9ec;
+}
+
+body {
+  background-color: #fdf9ec;
+  font-family: "HelvenicaNowDisplayLight";
+  color: #231f20;
+}
+
+/* helvetica */
+
+@font-face {
+  font-family: "HelvenicaNowDisplayLight";
+  src: local("HelvenicaNowDisplayLight"),
+    url("./assets/fonts/HelveticaNowDisplay-Light.ttf");
+}
+
+.helv-light {
+  font-family: "HelvenicaNowDisplayLight";
+}
+
+@font-face {
+  font-family: "HelvenicaNowDisplayRegular";
+  src: local("HelvenicaNowDisplayRegular"),
+    url("./assets/fonts/HelveticaNowDisplay-Regular.ttf");
+}
+
+.helv-regular {
+  font-family: "HelvenicaNowDisplayRegular";
+}
+
+@font-face {
+  font-family: "HelvenicaNowDisplayMedium";
+  src: local("HelvenicaNowDisplayMedium"),
+    url("./assets/fonts/HelveticaNowDisplay-Medium.ttf");
+}
+
+.helv-medium {
+  font-family: "HelvenicaNowDisplayMedium";
+}
+
+@font-face {
+  font-family: "HelvenicaNowDisplayBold";
+  src: local("HelvenicaNowDisplayBold"),
+    url("./assets/fonts/HelveticaNowDisplay-Bold.ttf");
+}
+
+.helv-bold {
+  font-family: "HelvenicaNowDisplayBold";
+}
+
+/* made mirage */
+
+@font-face {
+  font-family: "MadeMirageRegular";
+  src: local("MadeMirageRegular"), url("./assets/fonts/MADEMirage-Regular.otf");
+}
+
+.made-regular {
+  font-family: "MadeMirageRegular";
+}
+
+@font-face {
+  font-family: "MadeMirageMedium";
+  src: local("MadeMirageMedium"), url("./assets/fonts/MADEMirage-Medium.otf");
+}
+
+.made-medium {
+  font-family: "MadeMirageMedium";
+}
+
+@font-face {
+  font-family: "MadeMirageBold";
+  src: local("MadeMirageBold"), url("./assets/fonts/MADEMirage-Bold.otf");
+}
+
+.made-bold {
+  font-family: "MadeMirageBold";
+}
+
+/* menu */
+.menu-opened {
+  height: 15.5rem;
+  padding: 1rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+nav a.hover-effect::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: #fdf9ec;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a.hover-effect.pink::before {
+  background-color: #f86c9a;
+}
+
+nav a.hover-effect:hover::before {
+  width: 100%;
+}
+
+button.opened span.child-1 {
+  transform: translate(0.02rem, 0.57rem) rotate(45deg);
+}
+
+button.opened span.child-2 {
+  opacity: 0;
+}
+
+button.opened span.child-3 {
+  transform: translate(0.015rem, -0.5rem) rotate(-45deg);
+}
+
+/* projects */
+
+.project-item h3::before {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: rgba(35, 31, 32, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.project-item:hover h3::before {
+  width: 100%;
+}
+
+/* footer */
+
+.all-works a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: #f86c9a;
+  transition: all 0.3s ease-in-out;
+}
+
+.all-works:hover a::before {
+  width: 100%;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: rgba(35, 31, 32, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+li:hover a::before {
+  width: 100%;
+}
+
+@keyframes move-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animation-div:hover {
+  animation-play-state: paused;
+}
+
+/* go back */
+
+button.goback span.child-1 {
+  transform: translate(-0.09rem, 0.6rem) rotate(45deg);
+}
+
+@media (min-width: 1024px) {
+  button.goback span.child-1 {
+    transform: translate(-0.09vw, 0.6vw) rotate(45deg);
+  }
+}
+
+button.goback span.child-3 {
+  transform: translate(-0.09rem, -0.65rem) rotate(-45deg);
+}
+
+@media (min-width: 1024px) {
+  button.goback span.child-3 {
+    transform: translate(-0.09vw, -0.75vw) rotate(-45deg);
+  }
+}
+
+/* lets work menu */
+.letswork-opened {
+  opacity: 1;
+  width: 100vw;
+}
+
+.letswork-opened button {
+  display: flex;
+}
+
+.letswork-opened .form-contact {
+  opacity: 1;
+  transform: translateX(0vw);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
